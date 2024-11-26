@@ -1,0 +1,37 @@
+# Archivos de entorno virtual
+venv/
+env/
+*.egg-info/
+
+# Archivos de dependencias
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+
+# Configuración específica del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración de IDEs/editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Archivos de log
+*.log
+
+# Archivos relacionados con Flask
+instance/
+*.sqlite3
+
+# Archivos de configuración local
+.env
+*.secret
+config.json
+
+# Archivos de la cámara (si decides guardar frames temporalmente)
+captured_frames/
