@@ -17,9 +17,7 @@ const BackgroundImage = styled(Box)({
 });
 
 const ChatContainer = styled(Box)({
-  height: "200px",
-  width: "90%",
-  maxWidth: "800px",
+  maxWidth: "600px",
   overflowY: "auto",
   padding: "16px",
   backgroundColor: "#ffffff",
@@ -27,6 +25,8 @@ const ChatContainer = styled(Box)({
   boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
   display: "flex",
   flexDirection: "column",
+  marginBottom: "16px",
+  alignSelf: "center", // Centrar el contenedor en la pantalla
 });
 
 const Chat = () => {
@@ -210,7 +210,7 @@ const Chat = () => {
     <BackgroundImage>
       <h1>EmotionSense</h1>
       <img src={emotionlogo} className="logochat" alt="Logo emotion" />
-      <div className="chat-container">
+      <div className="chat-container" style={{ width: "100%", maxWidth: "600px", margin: "0 auto" }}>
         {isChatActive && (
           <>
             <video ref={videoRef} style={{ width: "100%", maxWidth: "600px", marginBottom: "16px" }}></video>
@@ -240,9 +240,7 @@ const Chat = () => {
                 </div>
               ))}
             </ChatContainer>
-            <button className="button" onClick={handleEndChat} style={{ marginTop: "16px", backgroundColor: "red" }}>
-              Finalizar Conversación
-            </button>
+            
           </>
         )}
 
@@ -255,7 +253,7 @@ const Chat = () => {
         )}
 
         {isChatActive && (
-          <div className="input-container" style={{ marginTop: "16px" }}>
+          <div className="input-container" style={{ marginTop: "16px", width: "100%", maxWidth: "600px", margin: "0 auto" }}>
             <TextField
               inputRef={inputRef}
               variant="outlined"
@@ -264,6 +262,9 @@ const Chat = () => {
               onChange={handleInputChange}
               fullWidth
             />
+            <button className="button" onClick={handleEndChat} style={{ marginTop: "16px", backgroundColor: "red" }}>
+              Finalizar Conversación
+            </button>
             <button
               className="button"
               onClick={handleSendMessage}
