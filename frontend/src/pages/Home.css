@@ -1,0 +1,49 @@
+#root {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .logo {
+    height: 10em;
+    padding: 1em;
+    margin-top: 2em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .cardLand {
+    padding: 1em;
+  }
+  
+  .under-text {
+    color: #888;
+  }
+  
+  .button {
+    background-color: #8672a5;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #8672a5;
+    border-radius: 8px;
+  }
+  
+  .button:hover {
+    background-color: #8672a5;
+    color: white;
+  }
+  
+  
