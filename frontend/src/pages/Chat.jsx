@@ -18,7 +18,7 @@ const BackgroundImage = styled(Box)({
 
 const ChatContainer = styled(Box)({
   height: "140px",
-  width: "90%",
+  width: "100%",
   maxWidth: "800px",
   overflowY: "auto",
   padding: "16px",
@@ -254,7 +254,7 @@ const Chat = () => {
         )}
 
         {isChatActive && (
-          <div className="input-container" style={{ marginTop: "16px", display: "flex", flexDirection: "row", alignItems: "center", alignContent:"center", justifyContent:"center"}}>
+          <div className="input-container" style={{ marginTop: "16px", display: "flex", flexDirection: "row", alignItems: "center", alignContent:"center", justifyContent:"center", marginBottom:"0px"}}>
             <TextField
               inputRef={inputRef}
               variant="outlined"
