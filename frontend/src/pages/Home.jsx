@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 import { testBackend } from "../services/api";
@@ -9,6 +10,12 @@ const Home = () => {
   useEffect(() => {
     testBackend();
   }, []);
+
+const navigate = useNavigate();
+
+const handleClick = () => {
+  navigate('/Chat'); 
+};
 
 const BackgroundImage = styled(Box)({
   backgroundImage: 'url(/bg.svg)', 
@@ -31,7 +38,7 @@ const BackgroundImage = styled(Box)({
         <p>
           Te damos la bienvenida a EmotionSense. Haz click en el botón de abajo para empezar.
         </p>
-        <button class="button">
+        <button class="button" onClick={handleClick}>
           Empezar
         </button>
       </div>
