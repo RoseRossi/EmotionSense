@@ -17,7 +17,7 @@ const BackgroundImage = styled(Box)({
 });
 
 const ChatContainer = styled(Box)({
-  height: "200px",
+  height: "140px",
   width: "90%",
   maxWidth: "800px",
   overflowY: "auto",
@@ -213,11 +213,13 @@ const Chat = () => {
       <div className="chat-container">
         {isChatActive && (
           <>
-            <video ref={videoRef} style={{ width: "100%", maxWidth: "600px", marginBottom: "16px" }}></video>
+            <video ref={videoRef} style={{ width: "40%", maxWidth: "600px", marginBottom: "0px" }}></video>
             <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
-            <button className="button" onClick={captureEmotion} style={{ marginBottom: "16px" }}>
+            <div>
+            <button className="button" onClick={captureEmotion} style={{ marginBottom: "5px" }}>
               Capturar Emoción
             </button>
+            </div>
             <ChatContainer>
               {messages.map((message, index) => (
                 <div
@@ -240,9 +242,6 @@ const Chat = () => {
                 </div>
               ))}
             </ChatContainer>
-            <button className="button" onClick={handleEndChat} style={{ marginTop: "16px", backgroundColor: "red" }}>
-              Finalizar Conversación
-            </button>
           </>
         )}
 
@@ -255,7 +254,7 @@ const Chat = () => {
         )}
 
         {isChatActive && (
-          <div className="input-container" style={{ marginTop: "16px" }}>
+          <div className="input-container" style={{ marginTop: "16px", display: "flex", flexDirection: "row", alignItems: "center", alignContent:"center", justifyContent:"center"}}>
             <TextField
               inputRef={inputRef}
               variant="outlined"
@@ -270,6 +269,9 @@ const Chat = () => {
               style={{ marginLeft: "8px" }}
             >
               Enviar
+            </button>
+            <button className="button" onClick={handleEndChat} style={{ backgroundColor: "red", width:"200px" }}>
+              Finalizar
             </button>
           </div>
         )}
