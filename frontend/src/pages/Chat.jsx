@@ -5,7 +5,7 @@ import { testBackend } from "../services/api";
 import "./Home.css";
 import emotionlogo from "../assets/logo.svg";
 
-const Home = () => {
+const Chat = () => {
   useEffect(() => {
     testBackend();
   }, []);
@@ -43,4 +43,4 @@ const BackgroundImage = styled(Box)({
   );
 };
 
-export default Home;
+export default Chat;
