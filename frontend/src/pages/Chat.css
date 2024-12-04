@@ -1,3 +1,16 @@
+:root {
+  --text-color: #000;
+  --bg-color: #fff;
+  --button-bg: #8672a5;
+  --button-text: #fff;
+}
+
+.dark-mode {
+  --text-color: #fff;
+  --bg-color: #333;
+  --button-bg: #444;
+  --button-text: #fff;
+}
 #root {
     margin: 0 auto;
     text-align: center;
@@ -9,14 +22,11 @@
     padding: 1em;
     margin-top: -2em;
   }
-  .cardLand {
-    padding: 1em;
-  }
   
   .button {
-    background-color: #8672a5;
+    background-color: var(--button-bg);
     border: none;
-    color: white;
+    color: var(--button-text);
     padding: 8px;
     text-align: center;
     text-decoration: none;
@@ -28,31 +38,7 @@
     border-radius: 8px;
   }
   
-  .button {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #8672a5;
-    border-radius: 8px;
-  }
-  
   .button:hover {
     background-color: #8672a5;
     color: white;
   }
-  .message.bot {
-    background-color: #8672a5;
-    align-self: flex-start;
-  }
-  
-  .message.user {
-    background-color: #f4e6fc;
-    align-self: flex-end;
-  }
-  
-  .message {
-    padding: 8px 12px;
-    border-radius: 12px;
-    margin: 4px 0;
-  }
-  
-  

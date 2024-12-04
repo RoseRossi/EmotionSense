@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
@@ -12,13 +12,18 @@ const Home = () => {
   }, []);
 
 const navigate = useNavigate();
+const [isDarkMode, setIsDarkMode] = useState(false);
 
 const handleClick = () => {
   navigate('/Chat'); 
 };
 
+const toggleTheme = () => {
+  setIsDarkMode((prevMode) => !prevMode);
+};
+
 const BackgroundImage = styled(Box)({
-  backgroundImage: 'url(/bg.svg)', 
+  backgroundImage:`url(${isDarkMode ? "/bgdark.svg" : "/bg.svg"})`, 
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   height: '100vh',
@@ -27,6 +32,8 @@ const BackgroundImage = styled(Box)({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  color: isDarkMode ? "#fff" : "#000",
+  transition: "color 0.3s, background-image 0.3s",
 });
 
   return (
@@ -45,6 +52,9 @@ const BackgroundImage = styled(Box)({
       <p className="under-text">
         Tu rostro nos habla, nosotros te respondemos.
       </p>
+      <button className="theme-toggle" onClick={toggleTheme}>
+          Cambiar a {isDarkMode ? "Modo Claro" : "Modo Oscuro"}
+      </button>
     </BackgroundImage>
     </>
   );
